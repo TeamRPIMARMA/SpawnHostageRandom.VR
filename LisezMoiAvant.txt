@@ -1,0 +1,12 @@
+In game mettre dans la console debug   
+
+[Hostage,Random_Spawn_Hostage] call POPO_fnc_SpawnRandomHostages;
+
+ou
+
+for '_i' from 0 to 6 do {
+[Hostage,Random_Spawn_Hostage] call POPO_fnc_SpawnRandomHostages;
+};
+
+puis dans la console debug constater le résultat en spectateur.
+
