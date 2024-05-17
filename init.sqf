@@ -1,19 +1,11 @@
-// init variable global
-// 14 hostages
-Hostage = ["C_Man_Paramedic_01_F","C_man_polo_4_F","C_man_sport_3_F","C_Man_formal_2_F","C_Man_casual_6_v2_F_tanoan","C_Man_casual_1_F_tanoan","C_Man_formal_1_F_tanoan","C_scientist_F","C_Man_Fisherman_01_F","C_Man_ConstructionWorker_01_Vrana_F","C_Man_ConstructionWorker_01_Black_F","C_Man_UtilityWorker_01_F","C_Journalist_01_War_F","C_journalist_F"];
-// 12 spawn
-//Random_Spawn_Hostage = [Spawn_Hostage_1,Spawn_Hostage_2,Spawn_Hostage_3,Spawn_Hostage_4,Spawn_Hostage_5,Spawn_Hostage_6,Spawn_Hostage_7,Spawn_Hostage_8,Spawn_Hostage_9,Spawn_Hostage_10,Spawn_Hostage_11,Spawn_Hostage_12];
-
-// Méthode qui est sûre de fonctionner mettre 1 otage pour 3 spawn évitant de réutiliser le même spawn
-Random_Spawn_Hostage_1 = [Spawn_Hostage_1,Spawn_Hostage_2,Spawn_Hostage_3];
-Random_Spawn_Hostage_2 = [Spawn_Hostage_4,Spawn_Hostage_5,Spawn_Hostage_6];
-Random_Spawn_Hostage_3 = [Spawn_Hostage_7,Spawn_Hostage_8,Spawn_Hostage_9];
-Random_Spawn_Hostage_4 = [Spawn_Hostage_10,Spawn_Hostage_11,Spawn_Hostage_12];
-
-call compile preprocessFileLineNumbers "Functions\common\POPO_fnc_SpawnHostageRandom.sqf";
+//--- Common Part execution
+call compile preprocessFileLineNumbers "Common\Init\Init_CommonConstants.sqf";
+call compile preprocessFileLineNumbers "Common\Init\Init_Common.sqf";
 
 // Qui nous donne ceci
 [Hostage,Random_Spawn_Hostage_1] call POPO_fnc_SpawnRandomHostages;
 [Hostage,Random_Spawn_Hostage_2] call POPO_fnc_SpawnRandomHostages;
 [Hostage,Random_Spawn_Hostage_3] call POPO_fnc_SpawnRandomHostages;
 [Hostage,Random_Spawn_Hostage_4] call POPO_fnc_SpawnRandomHostages;
+
+while {alive Hostage} do {["Sound\SonDetachHostage.ogg", Hostage] call POPO_fnc_3Dsound;sleep 30;};
