@@ -49,5 +49,4 @@ POPO_fnc_DetachHostage = {
   params ["_Hostage"];
 	_Hostage playMoveNow "Acts_AidlPsitMstpSsurWnonDnon_out";
   ["Sound\SonDetachHostage.ogg", _Hostage] call POPO_fnc_3Dsound;
-  Captive_Hostage = false;
 };

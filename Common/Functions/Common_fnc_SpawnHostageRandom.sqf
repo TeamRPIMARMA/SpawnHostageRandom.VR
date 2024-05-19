@@ -31,6 +31,7 @@
   [Hostage,Random_Spawn_Hostage,9] call POPO_fnc_SpawnRandomHostages;
 */
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 // Fonction spawn aléatoirement des Hostages captifs random avec les options 
 POPO_fnc_SpawnRandomHostages = {
     params ["_TypeHostage","_TypeSpawn_Hostage","_numberHostages"];
@@ -46,10 +47,11 @@ POPO_fnc_SpawnRandomHostages = {
         _HostageCreated setDir _DirHostage;
         _HostageCreated switchmove "Acts_AidlPsitMstpSsurWnonDnon03";
         {_HostageCreated DisableAI _x} forEach ["FSM", "AUTOTARGET","TARGET","MOVE"];
-        if (alive _HostageCreated /*&& hasInterface && not isServer*/) then {[_HostageCreated,"Escorter","HoldActionsPAA\holdAction_run_ca.paa","HoldActionsPAA\holdAction_run_ca.paa","player distance _target < 6","player distance _target < 6",{},{},{_this call POPO_fnc_EscortHostage},{},[],3,6,false,false] call BIS_fnc_holdActionAdd;};
-        if (alive _HostageCreated /*&& hasInterface && not isServer*/) then {[_HostageCreated,"Arrêter l'escort","A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa","A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa","player distance _target < 6","player distance _target < 6",{},{},{_this call POPO_fnc_StopEscort},{},[],1,5,false,false] call BIS_fnc_holdActionAdd;};
-        if (alive _HostageCreated /*&& hasInterface && not isServer*/) then {[_HostageCreated,"Détacher l'otage","A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa","A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa","player distance _target < 6","player distance _target < 6",{},{},{_this call POPO_fnc_DetachHostage},{},[],1,7,true,false] call BIS_fnc_holdActionAdd;};
-        //[alive _HostageCreated &&, "Sound\SonDetachHostage.ogg", _HostageCreated, 30] call POPO_Common_fnc_Loop;
+        if (alive _HostageCreated && hasInterface) then {[_HostageCreated,"Escorter","HoldActionsPAA\holdAction_run_ca.paa","HoldActionsPAA\holdAction_run_ca.paa","player distance _target < 6","player distance _target < 6",{},{},{_this call POPO_fnc_EscortHostage},{},[],3,6,false,false] call BIS_fnc_holdActionAdd;};
+        if (alive _HostageCreated && hasInterface) then {[_HostageCreated,"Arrêter l'escort","A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa","A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa","player distance _target < 6","player distance _target < 6",{},{},{_this call POPO_fnc_StopEscort},{},[],1,5,false,false] call BIS_fnc_holdActionAdd;};
+        if (alive _HostageCreated && hasInterface) then {[_HostageCreated,"Détacher l'otage","A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa","A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa","player distance _target < 6","player distance _target < 6",{},{},{_this call POPO_fnc_DetachHostage},{},[],1,7,true,false] call BIS_fnc_holdActionAdd;};
+        [alive _HostageCreated && animationstate _HostageCreated == "Acts_AidlPsitMstpSsurWnonDnon03", "Sound\SonDetachHostage.ogg", _HostageCreated, 15] spawn POPO_Common_fnc_Loop;
         sleep 1;
     };
 };
+
