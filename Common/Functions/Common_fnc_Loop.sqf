@@ -43,6 +43,7 @@ POPO_Common_fnc_Loop = {
     sleep _timeSleep;
     [ _filename2, _soundSource] call POPO_fnc_3Dsound;
     sleep _timeSleep;
-    if (animationstate _soundSource == "Acts_AidlPsitMstpSsurWnonDnon_out") exitWith; // loop exit condition
+    if (animationstate _soundSource == "Acts_AidlPsitMstpSsurWnonDnon_out") exitWith // loop exit condition
+    {};
   };	
 };
