@@ -11,5 +11,4 @@ Random_Spawn_Hostage_4 = [Spawn_Hostage_10,Spawn_Hostage_11,Spawn_Hostage_12];
 
 //Random_Spawn_House = ["Land_Slum_03_F","Land_House_Small_02_F","Land_House_Small_06_F"];
 
-//Captive_Hostage = true;
 

@@ -35,3 +35,6 @@ POPO_fnc_3Dsound = {
   params ["_filename","_soundSource"];
 	playSound3D [getMissionPath _filename, _soundSource, true, _soundSource modelToWorld [0,0,0],1,1,0];	
 };
+/*
+_scriptHandle = ["arguments"] execVM "scriptname.sqf";
+waitUntil { scriptDone _scriptHandle };

@@ -1,6 +1,4 @@
-In game mettre dans la console debug   
-
-[Hostage,Random_Spawn_Hostage] call POPO_fnc_SpawnRandomHostages;
-
-puis dans la console debug constater le résultat en spectateur.
-
+V 0.10 Besoin de correction : 
+dans la ligne 53 qui se trouve dans "Common_fnc_SpawnHostageRandom.sqf" [alive _HostageCreated && animationstate _HostageCreated == "Acts_AidlPsitMstpSsurWnonDnon03", "Sound\ausecoursjesuisretenuici.ogg","Sound\paricijesuisla.ogg", _HostageCreated, 15] spawn POPO_Common_fnc_Loop;
+il faut pouvoir renvoyer l'animation ( animationstate _HostageCreated == "Acts_AidlPsitMstpSsurWnonDnon03") false pour que la condition fonctionne.
+Ou sortir de la boucle avec if (...) exitWith {false};

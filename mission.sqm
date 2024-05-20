@@ -8,18 +8,18 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=46;
+		nextID=49;
 	};
 	class LayerIndexProvider
 	{
-		nextID=9;
+		nextID=10;
 	};
 	class Camera
 	{
-		pos[]={1031.8829,11.219261,6127.77};
-		dir[]={0.93896514,-0.33926371,-0.05696594};
-		up[]={0.33864495,0.94067401,-0.020545477};
-		aside[]={-0.060558952,8.1350436e-08,-0.99817723};
+		pos[]={1032.2811,21.61413,6125.8594};
+		dir[]={0.94139296,-0.33653268,0.022914592};
+		up[]={0.33643305,0.94167179,0.0081891688};
+		aside[]={0.024333948,-4.6566129e-10,-0.99970388};
 	};
 };
 binarizationWanted=0;
@@ -30,13 +30,15 @@ addons[]=
 	"A3_Structures_F_Civ_Garbage",
 	"A3_Structures_F_Exp_Civilian_Slum_03",
 	"A3_Structures_F_Exp_Civilian_House_Small_02",
-	"A3_Structures_F_Exp_Civilian_House_Small_06"
+	"A3_Structures_F_Exp_Civilian_House_Small_06",
+	"RF_Characters",
+	"A3_Weapons_F_Ammoboxes"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=3;
+		items=5;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -58,11 +60,26 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item3
+		{
+			className="RF_Characters";
+			name="Arma 3 Creator DLC: Reaction Forces - Characters and Clothing";
+			author="Rotators Collective";
+			url="https://reactionforces.rotators.net/";
+		};
+		class Item4
+		{
+			className="A3_Weapons_F";
+			name="Arma 3 Alpha - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 dlcs[]=
 {
-	"Expansion"
+	"Expansion",
+	"rf"
 };
 randomSeed=12799137;
 class ScenarioData
@@ -142,7 +159,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=4;
+		items=6;
 		class Item0
 		{
 			dataType="Group";
@@ -699,6 +716,69 @@ class Mission
 			{
 			};
 			id=11;
+		};
+		class Item4
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1046.3621,5.0014391,6124.5};
+						angles[]={0,4.754591,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						name="otage";
+					};
+					id=47;
+					type="C_pilot_story_RF";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.97000003;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=46;
+		};
+		class Item5
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1041.774,5.1867056,6123.1689};
+				angles[]={0,1.562698,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=48;
+			type="Box_NATO_WpsSpecial_F";
 		};
 	};
 };
