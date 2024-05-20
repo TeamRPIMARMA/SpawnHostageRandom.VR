@@ -34,14 +34,15 @@
   
 */
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Fonction qui accroche un son 3D à l'unité en boucle
+// Fonction qui accroche un son 3D à l'unité en boucle avec sa condition de sortie
 POPO_Common_fnc_Loop = {
   params ["_condition","_filename","_filename2","_soundSource","_timeSleep"];
   while {_condition} do 
   {
-      [ _filename, _soundSource] call POPO_fnc_3Dsound;
+    [ _filename, _soundSource] call POPO_fnc_3Dsound;
     sleep _timeSleep;
-      [ _filename2, _soundSource] call POPO_fnc_3Dsound;
+    [ _filename2, _soundSource] call POPO_fnc_3Dsound;
     sleep _timeSleep;
+    if (animationstate _soundSource == "Acts_AidlPsitMstpSsurWnonDnon_out") exitWith; // loop exit condition
   };	
 };
