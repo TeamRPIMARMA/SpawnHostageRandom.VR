@@ -49,8 +49,8 @@ POPO_fnc_SpawnRandomHostages = {
         if (alive _HostageCreated && hasInterface) then {[_HostageCreated,"Escorter","HoldActionsPAA\holdAction_run_ca.paa","HoldActionsPAA\holdAction_run_ca.paa","player distance _target < 6","player distance _target < 6",{},{},{_this call POPO_fnc_EscortHostage},{},[],3,6,false,false] call BIS_fnc_holdActionAdd;};
         if (alive _HostageCreated && hasInterface) then {[_HostageCreated,"Arrêter l'escort","A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa","A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa","player distance _target < 6","player distance _target < 6",{},{},{_this call POPO_fnc_StopEscort},{},[],1,5,false,false] call BIS_fnc_holdActionAdd;};
         if (alive _HostageCreated && hasInterface) then {[_HostageCreated,"Détacher l'otage","A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa","A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa","player distance _target < 6","player distance _target < 6",{},{},{_this call POPO_fnc_DetachHostage},{},[],1,7,true,false] call BIS_fnc_holdActionAdd;};
-        [alive _HostageCreated, "Sound\ausecoursjesuisretenuici.ogg","Sound\paricijesuisla.ogg", _HostageCreated, 10] spawn POPO_Common_fnc_Loop; // Pour plus tard rajouter l'animation de la bouche qui bouge pendant qu'il parle
-        sleep 1;
+        [alive _HostageCreated, "Sound\ausecoursjesuisretenuici.ogg", _HostageCreated, 5] spawn POPO_Common_fnc_Loop;
+        sleep 2.5;
     };
 };
 

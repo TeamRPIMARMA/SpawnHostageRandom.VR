@@ -30,20 +30,20 @@
   # DEPENDENCIES #
 
   # EXAMPLE #
-  [alive unit, "Sound\ausecoursjesuisretenuici.ogg","Sound\paricijesuisla.ogg", Hostage, 30] call POPO_Common_fnc_Loop;
+  [alive unit, "Sound\ausecoursjesuisretenuici.ogg","Sound\paricijesuisla.ogg", Hostage, 10] call POPO_Common_fnc_Loop;
   
 */
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Fonction qui accroche un son 3D à l'unité en boucle avec sa condition de sortie
 POPO_Common_fnc_Loop = {
-  params ["_condition","_filename","_filename2","_soundSource","_timeSleep"];
+  params ["_condition","_filename","_soundSource","_timeSleep"];
   while {_condition} do 
   {
     [ _filename, _soundSource] call POPO_fnc_3Dsound;
     sleep _timeSleep;
-    [ _filename2, _soundSource] call POPO_fnc_3Dsound;
-    sleep _timeSleep;
-    if (animationstate _soundSource == "Acts_AidlPsitMstpSsurWnonDnon_out") exitWith // loop exit condition
-    {};
+    if (animationstate _soundSource == "Acts_AidlPsitMstpSsurWnonDnon_out") exitWith
+    {
+        /*hint "je sors de la boucle.";*/
+    };
   };	
 };

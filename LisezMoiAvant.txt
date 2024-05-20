@@ -1,0 +1,2 @@
+_scriptHandle = ["arguments"] execVM "scriptname.sqf";
+waitUntil { scriptDone _scriptHandle };

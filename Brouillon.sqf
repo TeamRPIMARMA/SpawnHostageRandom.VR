@@ -11,14 +11,13 @@ if (alive otage && hasInterface) then {[otage,"Détacher l'otage","A3\Ui_f\data\
 while {alive otage} do  
 { 
     ["Sound\paricijesuisla.ogg", otage] call POPO_fnc_3Dsound;
-    sleep 10;
+    sleep 2.5;
     ["Sound\ausecoursjesuisretenuici.ogg", otage] call POPO_fnc_3Dsound;
-    sleep 10; 
+    sleep 2.5; 
     hint "je suis dans la boucle.";
     if (animationstate otage == "Acts_AidlPsitMstpSsurWnonDnon_out") exitWith
     {
         hint "je sors de la boucle.";
-        
     };
 };
 
