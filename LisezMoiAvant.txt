@@ -1,2 +1,9 @@
-_scriptHandle = ["arguments"] execVM "scriptname.sqf";
-waitUntil { scriptDone _scriptHandle };
+V 0.15:
+Rajout: du debug
+Rajout: des paramètres pour choisir les modifications missions
+Rajout: paramètre heure de départ
+Rajout: paramètre météo de départ
+Rajout: d'une futur traduction en plusieurs langues
+
+Correction: now le son 3D est limité à quelques mètres de l'otage
+Correction: l'otage ne peut plus spawn à un endroit déjà utlisé

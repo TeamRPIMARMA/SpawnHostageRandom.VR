@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="Parameters">
+	<Package name="Main">
+			<Key ID="STR_CTI_POPO_SpawnRandomHostage_ENABLED">
+				<French>IA: otage</French>>
+			</Key>
+			<Key ID="STR_CTI_DISABLED">
+				<French>Désactiver</French>
+			</Key>
+			<Key ID="STR_CTI_ENABLED">
+				<French>Activer</French>
+			</Key>
+			<Key ID="STR_CTI_POPO_SpawnRandomHostage_ENABLED_2">
+				<French>2 otages</French>
+			</Key>
+			<Key ID="STR_CTI_POPO_SpawnRandomHostage_ENABLED_5">
+				<French>5 otages</French>
+			</Key>
+			<Key ID="STR_CTI_POPO_SpawnRandomHostage_ENABLED_10">
+				<French>10 otages</French>
+			</Key>
+			<Key ID="STR_CTI_POPO_SpawnRandomHostage_ENABLED_15">
+				<French>15 otages</French>
+			</Key>
+			<Key ID="STR_CTI_POPO_SpawnRandomHostage_ENABLED_20">
+				<French>20 otages</French>
+			</Key>
+			<Key ID="STR_CTI_POPO_SpawnRandomHostage_ENABLED_25">
+				<French>25 otages</French>
+			</Key>
+			<Key ID="STR_CTI_POPO_SpawnRandomHostage_ENABLED_30">
+				<French>30 otages</French>
+			</Key>
+			<Key ID="STR_CTI_POPO_Debug_ENABLE">
+				<French>Debug:</French>
+			</Key>
+	</Package>
+</Project>

@@ -3,11 +3,10 @@ Hostage = ["C_Man_Paramedic_01_F","C_man_polo_4_F","C_man_sport_3_F","C_Man_form
 // 12 spawn
 Random_Spawn_Hostage = [Spawn_Hostage_1,Spawn_Hostage_2,Spawn_Hostage_3,Spawn_Hostage_4,Spawn_Hostage_5,Spawn_Hostage_6,Spawn_Hostage_7,Spawn_Hostage_8,Spawn_Hostage_9,Spawn_Hostage_10,Spawn_Hostage_11,Spawn_Hostage_12];
 
-// Méthode qui est sûre de fonctionner mettre 1 otage pour 3 spawn évitant de réutiliser le même spawn
-Random_Spawn_Hostage_1 = [Spawn_Hostage_1,Spawn_Hostage_2,Spawn_Hostage_3];
-Random_Spawn_Hostage_2 = [Spawn_Hostage_4,Spawn_Hostage_5,Spawn_Hostage_6];
-Random_Spawn_Hostage_3 = [Spawn_Hostage_7,Spawn_Hostage_8,Spawn_Hostage_9];
-Random_Spawn_Hostage_4 = [Spawn_Hostage_10,Spawn_Hostage_11,Spawn_Hostage_12];
+
+//if (isNil "CTI_POPO_SpawnRandomHostage_ENABLED") then {CTI_POPO_SpawnRandomHostage_ENABLED=1};
+//if (isNil "CTI_POPO_SpawnRandomHostage_ENABLED") then {CTI_POPO_SpawnRandomHostage_ENABLED=2};
+
 
 //Random_Spawn_House = ["Land_Slum_03_F","Land_House_Small_02_F","Land_House_Small_06_F"];
 

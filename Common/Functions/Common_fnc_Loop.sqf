@@ -36,14 +36,19 @@
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Fonction qui accroche un son 3D à l'unité en boucle avec sa condition de sortie
 POPO_Common_fnc_Loop = {
-  params ["_condition","_filename","_soundSource","_timeSleep"];
+  params ["_condition","_filename",/*"_filename2",*/"_soundSource","_timeSleep"];
   while {_condition} do 
   {
     [ _filename, _soundSource] call POPO_fnc_3Dsound;
     sleep _timeSleep;
-    if (animationstate _soundSource == "Acts_AidlPsitMstpSsurWnonDnon_out") exitWith
+    /*
+    [ _filename2, _soundSource] call POPO_fnc_3Dsound;
+    sleep _timeSleep;
+    */
+    if (CTI_POPO_Debug_ENABLE isEqualTo 1) then {hint "On est dans la boucle.";};
+    if (animationstate _soundSource == "Acts_AidlPsitMstpSsurWnonDnon_out") exitWith // Condition de sortie en true
     {
-        /*hint "je sors de la boucle.";*/
+        if (CTI_POPO_Debug_ENABLE isEqualTo 1) then {hint "On sort de la boucle.";};
     };
   };	
 };
