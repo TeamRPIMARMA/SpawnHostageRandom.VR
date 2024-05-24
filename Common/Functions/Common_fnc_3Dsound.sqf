@@ -20,18 +20,19 @@
   # PARAMETERS #
 
   # SYNTAX #
-	[filename, soundSource] call POPO_fnc_3Dsound;
+	[filename, soundSource] call POPO_Common_fnc_3Dsound;
 
 
   # DEPENDENCIES #
 
   # EXAMPLE #
-  ["Sound\SonDetachHostage.ogg", _Hostage] call POPO_fnc_3Dsound;
+  ["Sound\SonDetachHostage.ogg", _Hostage] call POPO_Common_fnc_3Dsound;
   
 */
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Fonction qui accroche un son 3D à l'unité
-POPO_fnc_3Dsound = {
+POPO_Common_fnc_3Dsound = {
   params ["_filename","_soundSource"];
 	playSound3D [getMissionPath _filename, _soundSource, false, _soundSource modelToWorld [0,0,0],1,1,50];
+  true
 };

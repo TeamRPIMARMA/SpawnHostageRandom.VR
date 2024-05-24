@@ -18,8 +18,8 @@
   # PARAMETERS #
 
   # SYNTAX #
-	[VARIABLE] call POPO_fnc_EscortHostage;
-  [VARIABLE] call POPO_fnc_StopEscort;
+	[VARIABLE] call POPO_Common_fnc_EscortHostage;
+  [VARIABLE] call POPO_Common_fnc_StopEscort;
 
   # DEPENDENCIES #
 
@@ -35,7 +35,7 @@
         "player distance _target < 6",
         {},
         {},
-        {_this call POPO_fnc_EscortHostage},
+        {_this call POPO_Common_fnc_EscortHostage},
         {},
         [],
         3,
@@ -55,7 +55,7 @@
         "player distance _target < 6",
         {},
         {},
-        {_this call POPO_fnc_StopEscort},
+        {_this call POPO_Common_fnc_StopEscort},
         {},
         [],
         1,
@@ -67,16 +67,18 @@
 */
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Fonction qui stop l'escort
-POPO_fnc_StopEscort = {
+POPO_Common_fnc_StopEscort = {
   params ["_Hostage"];
 	detach _Hostage;
+  true
 };
 // Fonction qui escort l'otage
-POPO_fnc_EscortHostage = {
+POPO_Common_fnc_EscortHostage = {
   params ["_Hostage"];
 	_Hostage attachTo [player , [0, -1, 0]]; 
 	_Hostage addVest "V_EOD_olive_F"; // V_Press_F
   {_Hostage enableAI _x} forEach ["FSM", "AUTOTARGET","TARGET", "MOVE"];
 	[_Hostage] join (group player); 
   _Hostage doFollow (leader group player);
+  true
 };

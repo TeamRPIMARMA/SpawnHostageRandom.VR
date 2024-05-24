@@ -22,17 +22,22 @@
   # PARAMETERS #
 
   # SYNTAX #
-	[VARIABLE, VARIABLE, VARIABLE] call POPO_fnc_SpawnRandomHostages;
+	[VARIABLE, VARIABLE, VARIABLE] call POPO_Common_fnc_SpawnRandomHostages;
 
   # DEPENDENCIES #
+  spawn POPO_Common_fnc_Loop;
+  call POPO_Common_fnc_DetachHostage;
+  call POPO_Common_fnc_EscortHostage;
+  call POPO_Common_fnc_StopEscort;
+  call POPO_Common_fnc_3Dsound;
 
   # EXAMPLE #
   in init.sqf : 
-  [Hostage,Random_Spawn_Hostage,9] call POPO_fnc_SpawnRandomHostages;
+  [Hostage,Random_Spawn_Hostage,9] call POPO_Common_fnc_SpawnRandomHostages;
 */
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Fonction spawn aléatoirement des Hostages captifs random avec les options 
-POPO_fnc_SpawnRandomHostages = {
+POPO_Common_fnc_SpawnRandomHostages = {
     params ["_TypeHostage","_TypeSpawn_Hostage","_numberHostages"];
     for "_i" from 0 to _numberHostages do // a loop repeating X times
     {
@@ -42,15 +47,16 @@ POPO_fnc_SpawnRandomHostages = {
         _side_grp_hostage = createGroup civilian;
         private _HostageCreated = _side_grp_hostage createUnit [_Hostage, _Spawn_Hostage, [], 0, "NONE"];
         Random_Spawn_Hostage deleteAt (Random_Spawn_Hostage find _Spawn_Hostage);
-        //hint str [Random_Spawn_Hostage]; // DEBUG Retourne le choix du random
+        if (CTI_POPO_Debug_ENABLE isEqualTo 1) then {hint format ["Retourne le spawn choisi, %1", Random_Spawn_Hostage];};
         _HostageCreated setDir _DirHostage;
         _HostageCreated switchmove "Acts_AidlPsitMstpSsurWnonDnon03";
         {_HostageCreated DisableAI _x} forEach ["FSM", "AUTOTARGET","TARGET","MOVE"];
-        if (alive _HostageCreated && hasInterface) then {[_HostageCreated,"Escorter","HoldActionsPAA\holdAction_run_ca.paa","HoldActionsPAA\holdAction_run_ca.paa","player distance _target < 6","player distance _target < 6",{},{},{_this call POPO_fnc_EscortHostage},{},[],3,6,false,false] call BIS_fnc_holdActionAdd;};
-        if (alive _HostageCreated && hasInterface) then {[_HostageCreated,"Arrêter l'escort","A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa","A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa","player distance _target < 6","player distance _target < 6",{},{},{_this call POPO_fnc_StopEscort},{},[],1,5,false,false] call BIS_fnc_holdActionAdd;};
-        if (alive _HostageCreated && hasInterface) then {[_HostageCreated,"Détacher l'otage","A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa","A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa","player distance _target < 6","player distance _target < 6",{},{},{_this call POPO_fnc_DetachHostage},{},[],1,7,true,false] call BIS_fnc_holdActionAdd;};
+        if (alive _HostageCreated && hasInterface) then {[_HostageCreated,"Escorter","HoldActionsPAA\holdAction_run_ca.paa","HoldActionsPAA\holdAction_run_ca.paa","player distance _target < 6","player distance _target < 6",{},{},{_this call POPO_Common_fnc_EscortHostage},{},[],3,6,false,false] call BIS_fnc_holdActionAdd;};
+        if (alive _HostageCreated && hasInterface) then {[_HostageCreated,"Arrêter l'escort","A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa","A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa","player distance _target < 6","player distance _target < 6",{},{},{_this call POPO_Common_fnc_StopEscort},{},[],1,5,false,false] call BIS_fnc_holdActionAdd;};
+        if (alive _HostageCreated && hasInterface) then {[_HostageCreated,"Détacher l'otage","A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa","A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa","player distance _target < 6","player distance _target < 6",{},{},{_this call POPO_Common_fnc_DetachHostage},{},[],1,7,true,false] call BIS_fnc_holdActionAdd;};
         [alive _HostageCreated, "Sound\ausecoursjesuisretenuici.ogg", _HostageCreated, 5] spawn POPO_Common_fnc_Loop;
         sleep 2.5;
     };
+    true
 };
 

@@ -18,7 +18,7 @@
   # PARAMETERS #
 
   # SYNTAX #
-	[VARIABLE] call POPO_fnc_DetachHostage;
+	[VARIABLE] call POPO_Common_fnc_DetachHostage;
 
   # DEPENDENCIES #
 
@@ -33,7 +33,7 @@
         "player distance _target < 6",
         {},
         {},
-        {_this call POPO_fnc_DetachHostage},
+        {_this call POPO_Common_fnc_DetachHostage},
         {},
         [],
         1,
@@ -45,8 +45,9 @@
 */
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Fonction qui libère l'otage
-POPO_fnc_DetachHostage = {
+POPO_Common_fnc_DetachHostage = {
   params ["_Hostage"];
 	_Hostage playMoveNow "Acts_AidlPsitMstpSsurWnonDnon_out";
-  ["Sound\SonDetachHostage.ogg", _Hostage] call POPO_fnc_3Dsound;
+  ["Sound\SonDetachHostage.ogg", _Hostage] call POPO_Common_fnc_3Dsound;
+  true
 };

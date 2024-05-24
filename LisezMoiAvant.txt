@@ -1,3 +1,9 @@
+V 0.16:
+
+Rajout: de true dans chaque fin de fonction
+Modification: des noms de variables fonctions
+Correction: maintenant quant on choisi désactiver dans paramètre mission [AI: otage] aucun otage ne spawn
+
 V 0.15:
 Rajout: du debug
 Rajout: des paramètres pour choisir les modifications missions
@@ -6,4 +12,4 @@ Rajout: paramètre météo de départ
 Rajout: d'une futur traduction en plusieurs langues
 
 Correction: now le son 3D est limité à quelques mètres de l'otage
-Correction: l'otage ne peut plus spawn à un endroit déjà utlisé
+Correction: l'otage ne peut plus spawn à un endroit déjà utilisé

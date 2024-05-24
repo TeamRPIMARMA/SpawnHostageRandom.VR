@@ -24,13 +24,14 @@
   # PARAMETERS #
 
   # SYNTAX #
-	[Condition of loop, "Sound Files 1","Sound Files 2", sound Source, Time loop in sec] call POPO_Common_fnc_Loop;
+	[Condition of loop, "Sound Files 1","Sound Files 2", sound Source, Time loop in sec] spawn POPO_Common_fnc_Loop;
 
 
   # DEPENDENCIES #
+  call POPO_Common_fnc_3Dsound;
 
   # EXAMPLE #
-  [alive unit, "Sound\ausecoursjesuisretenuici.ogg","Sound\paricijesuisla.ogg", Hostage, 10] call POPO_Common_fnc_Loop;
+  [alive unit, "Sound\ausecoursjesuisretenuici.ogg","Sound\paricijesuisla.ogg", Hostage, 10] spawn POPO_Common_fnc_Loop;
   
 */
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -39,10 +40,10 @@ POPO_Common_fnc_Loop = {
   params ["_condition","_filename",/*"_filename2",*/"_soundSource","_timeSleep"];
   while {_condition} do 
   {
-    [ _filename, _soundSource] call POPO_fnc_3Dsound;
+    [ _filename, _soundSource] call POPO_Common_fnc_3Dsound;
     sleep _timeSleep;
     /*
-    [ _filename2, _soundSource] call POPO_fnc_3Dsound;
+    [ _filename2, _soundSource] call POPO_Common_fnc_3Dsound;
     sleep _timeSleep;
     */
     if (CTI_POPO_Debug_ENABLE isEqualTo 1) then {hint "On est dans la boucle.";};
@@ -50,5 +51,6 @@ POPO_Common_fnc_Loop = {
     {
         if (CTI_POPO_Debug_ENABLE isEqualTo 1) then {hint "On sort de la boucle.";};
     };
-  };	
+  };
+  true	
 };

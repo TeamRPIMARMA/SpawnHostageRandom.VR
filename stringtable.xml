@@ -2,13 +2,16 @@
 <Project name="Parameters">
 	<Package name="Main">
 			<Key ID="STR_CTI_POPO_SpawnRandomHostage_ENABLED">
-				<French>IA: otage</French>>
+				<French>IA: otage</French>
 			</Key>
 			<Key ID="STR_CTI_DISABLED">
 				<French>Désactiver</French>
 			</Key>
 			<Key ID="STR_CTI_ENABLED">
 				<French>Activer</French>
+			</Key>
+			<Key ID="STR_CTI_POPO_SpawnRandomHostage_ENABLED_1">
+				<French>1 otages</French>
 			</Key>
 			<Key ID="STR_CTI_POPO_SpawnRandomHostage_ENABLED_2">
 				<French>2 otages</French>
