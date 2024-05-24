@@ -1,3 +1,8 @@
+V 0.17:
+
+Amélioration: de la fonction POPO_Common_fnc_SpawnRandomHostages, maintenant les otages spawn aléatoirement dans les bâtiments les plus proche d'un marqueur
+et cela devient la nouvelle fonction POPO_Common_fnc_SpawnRandomHostagesBuilding
+
 V 0.16:
 
 Rajout: de true dans chaque fin de fonction

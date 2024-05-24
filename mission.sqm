@@ -8,18 +8,22 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=49;
+		nextID=50;
+	};
+	class MarkerIDProvider
+	{
+		nextID=1;
 	};
 	class LayerIndexProvider
 	{
-		nextID=13;
+		nextID=15;
 	};
 	class Camera
 	{
-		pos[]={1018.4455,20.530516,6115.5679};
-		dir[]={0.91786164,-0.27178288,0.28924784};
-		up[]={0.25921637,0.96235865,0.081687443};
-		aside[]={0.3005614,-7.4505806e-09,-0.95376265};
+		pos[]={1029.7657,20.530516,6115.4668};
+		dir[]={0.93095469,-0.36503872,-0.0083728731};
+		up[]={0.36502394,0.93099231,-0.0032829731};
+		aside[]={-0.0089934925,0,-0.99995953};
 	};
 };
 binarizationWanted=0;
@@ -32,13 +36,14 @@ addons[]=
 	"A3_Structures_F_Exp_Civilian_House_Small_02",
 	"A3_Structures_F_Exp_Civilian_House_Small_06",
 	"RF_Characters",
-	"A3_Weapons_F_Ammoboxes"
+	"A3_Weapons_F_Ammoboxes",
+	"A3_Ui_F"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=5;
+		items=6;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -71,6 +76,13 @@ class AddonsMetaData
 		{
 			className="A3_Weapons_F";
 			name="Arma 3 Alpha - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item5
+		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -159,7 +171,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=6;
+		items=7;
 		class Item0
 		{
 			dataType="Group";
@@ -779,6 +791,17 @@ class Mission
 			};
 			id=48;
 			type="Box_NATO_WpsSpecial_F";
+		};
+		class Item6
+		{
+			dataType="Marker";
+			position[]={1143.4189,5,6124.144};
+			name="marker_0";
+			markerType="ELLIPSE";
+			type="";
+			a=100;
+			b=100;
+			id=49;
 		};
 	};
 };
