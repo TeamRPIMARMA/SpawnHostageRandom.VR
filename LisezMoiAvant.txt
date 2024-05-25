@@ -1,3 +1,8 @@
+V 0.18:
+
+Correction: maintenant tout les messages contextuels sont gérés par 
+la traduction
+
 V 0.17:
 
 Amélioration: de la fonction POPO_Common_fnc_SpawnRandomHostages, maintenant les otages spawn aléatoirement dans les bâtiments les plus proche d'un marqueur

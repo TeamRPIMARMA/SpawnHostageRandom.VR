@@ -14,7 +14,7 @@ class Params {
 	class CTI_POPO_Debug_ENABLE {
 	title = $STR_CTI_POPO_Debug_ENABLE;
 	values[]={0,1};
-	texts[]={$STR_CTI_DISABLED, $STR_CTI_ENABLED};
+	texts[]={ $STR_CTI_DISABLED, $STR_CTI_ENABLED};
 	default = 0;
 	};
 };

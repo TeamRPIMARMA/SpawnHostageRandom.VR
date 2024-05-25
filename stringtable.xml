@@ -37,5 +37,14 @@
 			<Key ID="STR_CTI_POPO_Debug_ENABLE">
 				<French>Debug:</French>
 			</Key>
+			<Key ID="STR_CTI_POPO_Escort">
+				<French>Escorter</French>
+			</Key>
+			<Key ID="STR_CTI_POPO_STOP_Escort">
+				<French>Arrêter l'escort</French>
+			</Key>		
+			<Key ID="STR_CTI_POPO_FREE_Hostage">
+				<French>Détacher l'otage</French>
+			</Key>		
 	</Package>
 </Project>
