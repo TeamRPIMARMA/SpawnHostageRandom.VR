@@ -1,3 +1,7 @@
+V 0.19:
+
+Rajout: nouveau fichier Game.hpp
+
 V 0.18:
 
 Correction: maintenant tout les messages contextuels sont gérés par 
