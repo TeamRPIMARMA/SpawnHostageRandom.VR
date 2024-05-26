@@ -5,4 +5,6 @@ Random_Spawn_Hostage = [Spawn_Hostage_1,Spawn_Hostage_2,Spawn_Hostage_3,Spawn_Ho
 
 //Random_Spawn_House = ["Land_Slum_03_F","Land_House_Small_02_F","Land_House_Small_06_F"];
 
+Random_Damage = [0,0.2,0.5,0.7,1];
+
 

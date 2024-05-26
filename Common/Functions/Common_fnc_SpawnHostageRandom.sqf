@@ -44,12 +44,14 @@ POPO_Common_fnc_SpawnRandomHostages = {
         _Hostage = selectRandom _TypeHostage;// call BIS_fnc_selectRandom;
         _Spawn_Hostage = selectRandom _TypeSpawn_Hostage;// call BIS_fnc_selectRandom;
         _DirHostage = getDir _Spawn_Hostage;
+        _damageHostage = selectRandom Random_Damage;
         _side_grp_hostage = createGroup civilian;
         private _HostageCreated = _side_grp_hostage createUnit [_Hostage, _Spawn_Hostage, [], 0, "NONE"];
         Random_Spawn_Hostage deleteAt (Random_Spawn_Hostage find _Spawn_Hostage);
         if (CTI_POPO_Debug_ENABLE isEqualTo 1) then {hint format ["Retourne le spawn choisi, %1", Random_Spawn_Hostage];};
         _HostageCreated setDir _DirHostage;
         _HostageCreated switchmove "Acts_AidlPsitMstpSsurWnonDnon03";
+        _HostageCreated setDamage _damageHostage;
         {_HostageCreated DisableAI _x} forEach ["FSM", "AUTOTARGET","TARGET","MOVE"];
         if (alive _HostageCreated && hasInterface) then {[_HostageCreated,localize "STR_CTI_POPO_Escort","\a3\missions_f_oldman\data\img\holdactions\holdAction_follow_start_ca.paa","\a3\missions_f_oldman\data\img\holdactions\holdAction_follow_start_ca.paa","player distance _target < 6","player distance _target < 6",{},{},{_this call POPO_Common_fnc_EscortHostage},{},[],3,6,false,false] call BIS_fnc_holdActionAdd;};
         if (alive _HostageCreated && hasInterface) then {[_HostageCreated,localize "STR_CTI_POPO_STOP_Escort","\a3\missions_f_oldman\data\img\holdactions\holdAction_follow_stop_ca.paa","\a3\missions_f_oldman\data\img\holdactions\holdAction_follow_stop_ca.paa","player distance _target < 6","player distance _target < 6",{},{},{_this call POPO_Common_fnc_StopEscort},{},[],1,5,false,false] call BIS_fnc_holdActionAdd;};

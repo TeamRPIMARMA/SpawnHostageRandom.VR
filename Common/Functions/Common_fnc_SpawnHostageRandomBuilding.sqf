@@ -43,11 +43,13 @@ POPO_Common_fnc_SpawnRandomHostagesBuilding = {
     {
         _buildings = nearestObjects [(getMarkerPos _nameMarker), ["house"], _distanceRadius];
         _building = selectRandom _buildings;
+        _damageHostage = selectRandom Random_Damage;
         _buildingPositions = [_building] call BIS_fnc_buildingPositions;
         _side_grp_hostage = createGroup [civilian, true];
         _HostageCreated = _side_grp_hostage createUnit [(selectRandom _TypeHostage), (selectRandom _buildingPositions), [], 0, "NONE"]; 
         _HostageCreated switchmove "Acts_AidlPsitMstpSsurWnonDnon03";
         {_HostageCreated DisableAI _x} forEach ["FSM", "AUTOTARGET","TARGET","MOVE"];
+        _HostageCreated setDamage _damageHostage;
         if (alive _HostageCreated && hasInterface) then {[_HostageCreated,localize "STR_CTI_POPO_Escort","\a3\missions_f_oldman\data\img\holdactions\holdAction_follow_start_ca.paa","\a3\missions_f_oldman\data\img\holdactions\holdAction_follow_start_ca.paa","player distance _target < 6","player distance _target < 6",{},{},{_this call POPO_Common_fnc_EscortHostage},{},[],3,6,false,false] call BIS_fnc_holdActionAdd;};
         if (alive _HostageCreated && hasInterface) then {[_HostageCreated,localize "STR_CTI_POPO_STOP_Escort","\a3\missions_f_oldman\data\img\holdactions\holdAction_follow_stop_ca.paa","\a3\missions_f_oldman\data\img\holdactions\holdAction_follow_stop_ca.paa","player distance _target < 6","player distance _target < 6",{},{},{_this call POPO_Common_fnc_StopEscort},{},[],1,5,false,false] call BIS_fnc_holdActionAdd;};
         if (alive _HostageCreated && hasInterface) then {[_HostageCreated,localize "STR_CTI_POPO_FREE_Hostage","A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa","A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_unbind_ca.paa","player distance _target < 6","player distance _target < 6",{},{},{_this call POPO_Common_fnc_DetachHostage},{},[],1,7,true,false] call BIS_fnc_holdActionAdd;};

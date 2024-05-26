@@ -1,6 +1,12 @@
+V 0.20:
+
+Rajout: un damage random aux otages 
+
 V 0.19:
 
 Rajout: nouveau fichier Game.hpp
+
+à faire rajouter un aléatoire de damage sur les otages !!!
 
 V 0.18:
 

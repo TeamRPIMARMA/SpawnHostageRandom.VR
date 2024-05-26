@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=50;
+		nextID=51;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=15;
+		nextID=19;
 	};
 	class Camera
 	{
-		pos[]={1029.7657,20.530516,6115.4668};
-		dir[]={0.93095469,-0.36503872,-0.0083728731};
-		up[]={0.36502394,0.93099231,-0.0032829731};
-		aside[]={-0.0089934925,0,-0.99995953};
+		pos[]={1013.4734,18.704702,6116.6768};
+		dir[]={0.91773409,-0.38966548,0.076971523};
+		up[]={0.38830405,0.92093998,0.032567598};
+		aside[]={0.083579317,-1.0760778e-07,-0.99650764};
 	};
 };
 binarizationWanted=0;
@@ -171,7 +171,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=7;
+		items=8;
 		class Item0
 		{
 			dataType="Group";
@@ -796,12 +796,27 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1143.4189,5,6124.144};
-			name="marker_0";
+			name="hostages_marker_0";
 			markerType="ELLIPSE";
 			type="";
 			a=100;
 			b=100;
 			id=49;
+		};
+		class Item7
+		{
+			dataType="Trigger";
+			position[]={1048.9919,5,6120.063};
+			class Attributes
+			{
+				onActivation="[Hostage, 5, ""hostages_marker_0"", 100] spawn POPO_Common_fnc_SpawnRandomHostagesBuilding;";
+				sizeA=0;
+				sizeB=0;
+				repeatable=1;
+				activationBy="ALPHA";
+			};
+			id=50;
+			type="EmptyDetector";
 		};
 	};
 };
