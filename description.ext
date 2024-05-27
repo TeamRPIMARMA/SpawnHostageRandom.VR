@@ -13,3 +13,7 @@ showMap                 = 1;// Allow Map
 showWatch               = 1;// Allow Watch
 forceRotorLibSimulation = 0;// Default value: 0 = options based; 1 = force enable; 2 = force disable
 unsafeCVL               = 0;// Allow createVehicleLocal. 0 = prohibited (default) - 1 = allowed.
+
+class CfgFunctions {
+    #include "Rsc\Functions.hpp"
+};

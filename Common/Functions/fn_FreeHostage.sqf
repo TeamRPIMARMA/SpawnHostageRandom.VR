@@ -1,6 +1,6 @@
 /*
   # HEADER #
-	Script: 		Common\Functions\Common_fnc_FreeHostage.sqf
+	Script: 		Common\Functions\fn_FreeHostage.sqf
 	Alias:			
 	Description:			      
           <FR = La fonction permet de libéré l'otage. 
@@ -8,20 +8,19 @@
           EN = The function allows you to free the hostage.
 	Author: 		Popo
 	Creation Date:	16-05-2024
-	Revision Date:	16-05-2024
+	Revision Date:	27-05-2024
 	
   # PARAMETERS #
   0	[String]: The type of hostage to create
 
   # RETURNED VALUE #
 
-  # PARAMETERS #
-
   # SYNTAX #
-	[VARIABLE] call POPO_Common_fnc_DetachHostage;
+	[VARIABLE] call POPO_fnc_FreeHostage;
 
   # DEPENDENCIES #
-
+  call POPO_fnc_3Dsound;
+  
   # EXAMPLE #
   if (alive _HostageCreated && hasInterface && not isServer) then {
       [
@@ -33,7 +32,7 @@
         "player distance _target < 6",
         {},
         {},
-        {_this call POPO_Common_fnc_DetachHostage},
+        {_this call POPO_fnc_FreeHostage},
         {},
         [],
         1,
@@ -45,9 +44,8 @@
 */
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Fonction qui libère l'otage
-POPO_Common_fnc_DetachHostage = {
-  params ["_Hostage"];
-	_Hostage playMoveNow "Acts_AidlPsitMstpSsurWnonDnon_out";
-  ["Sound\SonDetachHostage.ogg", _Hostage] call POPO_Common_fnc_3Dsound;
-  true
-};
+params ["_Hostage"];
+_Hostage playMoveNow "Acts_AidlPsitMstpSsurWnonDnon_out";
+["Sound\SonDetachHostage.ogg", _Hostage] call POPO_fnc_3Dsound;
+true
+

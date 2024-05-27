@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=19;
+		nextID=21;
 	};
 	class Camera
 	{
@@ -809,7 +809,7 @@ class Mission
 			position[]={1048.9919,5,6120.063};
 			class Attributes
 			{
-				onActivation="[Hostage, 5, ""hostages_marker_0"", 100] spawn POPO_Common_fnc_SpawnRandomHostagesBuilding;";
+				onActivation="[Hostage, 5, ""hostages_marker_0"", 100] spawn POPO_fnc_SpawnRandomHostagesBuilding;";
 				sizeA=0;
 				sizeB=0;
 				repeatable=1;

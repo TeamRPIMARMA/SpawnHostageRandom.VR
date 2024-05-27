@@ -1,6 +1,12 @@
+V 1.20:
+
+Amélioration: réoganisation des functions 
+en passant par la méthode cfg.function améliorant la sécurité
+ainsi que les performances
+
 V 0.20:
 
-Rajout: un damage random aux otages 
+Rajout: un random damage aux otages 
 
 V 0.19:
 
@@ -15,8 +21,8 @@ la traduction
 
 V 0.17:
 
-Amélioration: de la fonction POPO_Common_fnc_SpawnRandomHostages, maintenant les otages spawn aléatoirement dans les bâtiments les plus proche d'un marqueur
-et cela devient la nouvelle fonction POPO_Common_fnc_SpawnRandomHostagesBuilding
+Amélioration: de la fonction POPO_fnc_SpawnRandomHostages, maintenant les otages spawn aléatoirement dans les bâtiments les plus proche d'un marqueur
+et cela devient la nouvelle fonction POPO_fnc_SpawnRandomHostagesBuilding
 
 V 0.16:
 
@@ -33,3 +39,26 @@ Rajout: d'une futur traduction en plusieurs langues
 
 Correction: now le son 3D est limité à quelques mètres de l'otage
 Correction: l'otage ne peut plus spawn à un endroit déjà utilisé
+
+/*
+class MC_Common {
+    tag = "MCCO";
+
+    class Common {
+        file = "Common\Init";
+        //class initCommon;
+        class initCommonConstants{};
+        class initParameters;
+    };
+
+    class CommonFunctions{
+        file = "Common\Functions";
+        class 3DSound;
+        class EscortHostage;
+        class FreeHostage;
+        class Loop;
+        class SpawnHostageRandom;
+        class SpawnHostageRandomBuilding;
+    };
+};
+*/
